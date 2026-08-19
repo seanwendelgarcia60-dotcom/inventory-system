@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
+import ProductList from './pages/ProductList';
 import PrivateRoute from './components/PrivateRoute';
 
 function Placeholder({ text }) {
@@ -15,7 +16,15 @@ export default function App() {
           path="/products"
           element={
             <PrivateRoute>
-              <Placeholder text="Products page coming next" />
+              <ProductList />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/report"
+          element={
+            <PrivateRoute>
+              <Placeholder text="Report page coming next" />
             </PrivateRoute>
           }
         />
