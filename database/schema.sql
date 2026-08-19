@@ -1,0 +1,23 @@
+CREATE DATABASE InventoryDB;
+GO
+USE InventoryDB;
+GO
+
+CREATE TABLE Users (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    username NVARCHAR(50) UNIQUE NOT NULL,
+    password_hash NVARCHAR(255) NOT NULL,
+    role NVARCHAR(20) DEFAULT 'admin',
+    created_at DATETIME DEFAULT GETDATE()
+);
+
+CREATE TABLE Products (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    name NVARCHAR(100) NOT NULL,
+    sku NVARCHAR(50) UNIQUE NOT NULL,
+    category NVARCHAR(50),
+    quantity INT DEFAULT 0,
+    price DECIMAL(10,2) DEFAULT 0,
+    created_at DATETIME DEFAULT GETDATE(),
+    updated_at DATETIME DEFAULT GETDATE()
+);
