@@ -1,11 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
 import ProductList from './pages/ProductList';
+import Report from './pages/Report';
 import PrivateRoute from './components/PrivateRoute';
-
-function Placeholder({ text }) {
-  return <h2 style={{ padding: 24 }}>{text}</h2>;
-}
 
 export default function App() {
   return (
@@ -24,7 +21,7 @@ export default function App() {
           path="/report"
           element={
             <PrivateRoute>
-              <Placeholder text="Report page coming next" />
+              <Report />
             </PrivateRoute>
           }
         />
